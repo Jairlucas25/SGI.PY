@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eventos</title>
+</head>
+<body>
+    <h1>Eventos</h1>
+    <a href="{% url 'event_create' %}">Adicionar novo evento</a>
+    <ul>
+        {% for event in events %}
+            <li>
+                <a href="{% url 'event_update' event.pk %}">{{ event.name }}</a> - {{ event.date }} - {{ event.location }}
+                <form action="{% url 'event_delete' event.pk %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Deletar</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

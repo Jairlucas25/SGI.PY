@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deletar Doação</title>
+</head>
+<body>
+    <h1>Você tem certeza que deseja deletar a doação de "{{ donation.donor_name }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Deletar</button>
+    </form>
+    <a href="{% url 'donation_list' %}">Cancelar</a>
+</body>
+</html>

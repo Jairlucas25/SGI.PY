@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doações</title>
+</head>
+<body>
+    <h1>Doações</h1>
+    <a href="{% url 'donation_create' %}">Adicionar nova doação</a>
+    <ul>
+        {% for donation in donations %}
+            <li>
+                <a href="{% url 'donation_update' donation.pk %}">{{ donation.member }}</a> - {{ donation.amount }} - {{ donation.date }}
+                <form action="{% url 'donation_delete' donation.pk %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Deletar</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

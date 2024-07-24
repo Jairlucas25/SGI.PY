@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes do Membro</title>
+</head>
+<body>
+    <h1>{{ member.first_name }} {{ member.last_name }}</h1>
+    <p>Email: {{ member.email }}</p>
+    <p>Telefone: {{ member.phone }}</p>
+    <p>Endereço: {{ member.address }}</p>
+    <p>Data de Nascimento: {{ member.date_of_birth }}</p>
+    <p>Data de Adesão: {{ member.date_joined }}</p>
+    <a href="{% url 'member_edit' pk=member.pk %}">Editar</a>
+</body>
+</html>

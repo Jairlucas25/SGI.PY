@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adicionar/Editar Membro</title>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Editar Membro{% else %}Adicionar Novo Membro{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'member_list' %}">Voltar à lista de membros</a>
+</body>
+</html>

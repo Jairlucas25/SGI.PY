@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Membros</title>
+</head>
+<body>
+    <h1>Lista de Membros</h1>
+    <ul>
+        {% for member in members %}
+            <li>
+                <a href="{% url 'member_detail' pk=member.pk %}">{{ member.first_name }} {{ member.last_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'member_new' %}">Adicionar novo membro</a>
+</body>
+</html>

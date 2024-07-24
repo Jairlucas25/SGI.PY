@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doações</title>
+</head>
+<body>
+    <h1>Lista de Doações</h1>
+    <ul>
+        {% for donation in donations %}
+        <li>{{ donation.member }} - {{ donation.amount }} - {{ donation.date }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Voltar</a>
+</body>
+</html>
